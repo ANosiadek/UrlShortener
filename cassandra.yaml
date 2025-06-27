@@ -1,0 +1,12 @@
+cluster_name: urlshortener_cluster
+rpc_address: 0.0.0.0
+listen_address: urlshortener_cassandra
+broadcast_rpc_address: urlshortener_cassandra
+commitlog_sync: periodic
+commitlog_sync_period: 10000ms
+partitioner: org.apache.cassandra.dht.Murmur3Partitioner
+endpoint_snitch: SimpleSnitch
+seed_provider:
+  - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+    parameters:
+      - seeds: "urlshortener_cassandra"

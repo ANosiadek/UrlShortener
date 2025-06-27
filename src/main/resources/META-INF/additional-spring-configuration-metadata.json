@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "url.shortener.ttl",
+    "type": "java.lang.String",
+    "description": "A description for 'url.shortener.ttl'"
+  },
+  {
+    "name": "url.shortener.ttl-days",
+    "type": "java.lang.String",
+    "description": "A description for 'url.shortener.ttl-days'"
+  },
+  {
+    "name": "url.cleanup.last-used-ttl-days",
+    "type": "java.lang.String",
+    "description": "A description for 'url.cleanup.last-used-ttl-days'"
+  },
+  {
+    "name": "url.cleanup.created-ttl-days",
+    "type": "java.lang.String",
+    "description": "A description for 'url.cleanup.created-ttl-days'"
+  },
+  {
+    "name": "url.cleanup.cron",
+    "type": "java.lang.String",
+    "description": "A description for 'url.cleanup.cron'"
+  },
+  {
+    "name": "url.forbidden.words",
+    "type": "java.lang.String",
+    "description": "A description for 'url.forbidden.words'"
+  }
+]}

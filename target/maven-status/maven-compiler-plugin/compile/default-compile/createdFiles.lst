@@ -1,0 +1,8 @@
+com\example\urlshortener\service\UrlValidationService.class
+com\example\urlshortener\UrlShortenerApplication.class
+com\example\urlshortener\model\ForbiddenUrlMessage.class
+com\example\urlshortener\controller\UrlShortenerController.class
+com\example\urlshortener\model\UrlEntry.class
+com\example\urlshortener\repository\UrlRepository.class
+com\example\urlshortener\service\UrlCleanupService.class
+com\example\urlshortener\service\UrlShortenerService.class

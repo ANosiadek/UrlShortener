@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skracacz URL</title>
+    <script>
+        async function shortenUrl() {
+        const longUrl = document.getElementById("longUrl").value;
+        const shortUrlElement = document.getElementById("shortUrl");
+            shortUrlElement.innerHTML = "";
+
+        if (!longUrl) {
+                shortUrlElement.innerHTML = '<span class="error">Proszę wpisać URL</span>';
+                return;
+            }
+
+        try {
+            const response = await fetch(`http://localhost:8080/api/shorten?longUrl=${encodeURIComponent(longUrl)}`, {
+                method: "POST"
+            });
+            if (!response.ok) {
+                throw new Error("Błąd skracania URL");
+            }
+
+            const shortUrl = await response.text();
+            shortUrlElement.innerHTML = 
+                `<a href="http://localhost:8080/api/${shortUrl}" target="_blank">http://localhost:8080/api/${shortUrl}</a>`;
+        } catch (error) {
+            shortUrlElement.innerHTML = `Błąd: ${error.message}`;
+    }
+}
+    </script>
+</head>
+<body>
+    <h2>Skracacz URL</h2>
+    <input type="text" id="longUrl" placeholder="Wpisz długi URL" size="50">
+    <button onclick="shortenUrl()">Skróć</button>
+    <p>Twój skrócony URL: <span id="shortUrl"></span></p>
+</body>
+</html>
